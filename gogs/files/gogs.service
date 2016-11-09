@@ -1,0 +1,25 @@
+{%- from "gogs/map.jinja" import gogs with context -%}
+{%- set config = gogs.config -%}
+
+[Unit]
+Description={{ config['app_name'] }}
+After=syslog.target
+After=network.target
+
+[Service]
+# Modify these two values and uncomment them if you have
+# repos with lots of files and get an HTTP error 500 because
+# of that
+###
+#LimitMEMLOCK=infinity
+#LimitNOFILE=65535
+Type=simple
+User={{ config['run_user'] }}
+Group={{ config['run_user'] }}
+WorkingDirectory={{ config['install_dir'] }}
+ExecStart={{ config['install_dir'] }}/gogs web
+Restart=always
+Environment=USER={{ config['run_user'] }} HOME=/home/{{ config['run_user'] }}
+
+[Install]
+WantedBy=multi-user.target

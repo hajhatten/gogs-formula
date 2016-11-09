@@ -1,0 +1,48 @@
+gogs:
+  config:
+    app_name: 'Gogs: Go Git Service'
+    run_user: 'gogs'
+    run_mode: 'prod'
+    version: 'v0.9.97'
+    hash_type: 'md5'
+    hash: 'defac791b83c437078428668bfcba3b5'
+    extract_archive_dir: '/opt'
+    install_dir: '/opt/gogs'
+    log_dir: '/var/log/gogs'
+  database:
+    type: 'postgresql'
+    host: 'instancename.accountnumber.us-east-1.rds.amazonaws.com'
+    port: '5432'
+    database: 'gogs'
+    user: 'gogs_master'
+    password: 'gogs_password'
+    ssl_mode: 'require'
+    path: 'data/gogs.db'
+  repository:
+    repository_path: '/opt/gogs/gogs-repositories'
+  server:
+    domain: 'gogs.example.com'
+    http_port: '3000'
+    root_url: 'http://gogs.example.com/'
+    disable_ssh: False
+    ssh_port: 22
+    offline_mode: False
+  mailer:
+    enabled: False
+  service:
+    register_email_confirm: False
+    enable_notify_mail: False
+    disable_registration: True
+    enable_captcha: True
+    require_signin_view: True
+  picture:
+    disable_gravatar: False
+  session:
+    provider: 'file'
+  log:
+    mode: 'file'
+    level: 'info'
+    root_path: '/var/log'
+  security:
+    install_lock: True
+    secret_key: '7SRbrHN0S2T5AYS'

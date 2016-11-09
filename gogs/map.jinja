@@ -1,0 +1,8 @@
+{% import_yaml "gogs/defaults.yaml" as default_settings %}
+
+{% set gogs = salt['pillar.get'](
+    'gogs',
+    default=default_settings.gogs,
+    merge=True
+  )
+%}
