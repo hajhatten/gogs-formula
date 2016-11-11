@@ -10,7 +10,7 @@ gogs:
     install_dir: '/opt/gogs'
     log_dir: '/var/log/gogs'
   database:
-    type: 'postgresql'
+    type: 'postgres'
     host: 'instancename.accountnumber.us-east-1.rds.amazonaws.com'
     port: '5432'
     database: 'gogs'
@@ -42,7 +42,7 @@ gogs:
   log:
     mode: 'file'
     level: 'info'
-    root_path: '/var/log'
+    root_path: '/var/log/gogs'
   security:
     install_lock: True
     secret_key: '7SRbrHN0S2T5AYS'

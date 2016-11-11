@@ -20,8 +20,12 @@ gogs_archive:
 {{ config['install_dir'] }}:
   file.directory:
     - user: {{ config['run_user'] }}
-    - root: {{ config['run_user'] }}
+    - group: {{ config['run_user'] }}
     - mode: 755
+    - recurse:
+      - user
+      - group
+      - mode
     - require:
       - user: gogs
 
@@ -43,6 +47,10 @@ repo_dir:
     - user: {{ config['run_user'] }}
     - group: {{ config['run_user'] }}
     - mode: 755
+    - recurse:
+      - user
+      - group
+      - mode
     - require:
       - user: gogs
   
@@ -52,8 +60,15 @@ log_dir:
     - user: {{ config['run_user'] }}
     - group: {{ config['run_user'] }}
     - mode: 755
+    - recurse:
+      - user
+      - group
+      - mode
     - require:
       - user: gogs
+
+{{ config['log_dir'] }}/gogs.log:
+  file.touch
 
 /etc/systemd/system/gogs.service:
   file.managed:
