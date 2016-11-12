@@ -69,6 +69,10 @@ log_dir:
 
 {{ config['log_dir'] }}/gogs.log:
   file.touch
+{{ config['log_dir'] }}/http.log:
+  file.touch
+{{ config['log_dir'] }}/xorm.log:
+  file.touch
 
 /etc/systemd/system/gogs.service:
   file.managed:

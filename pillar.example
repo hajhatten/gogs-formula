@@ -11,7 +11,7 @@ gogs:
     log_dir: '/var/log/gogs'
   database:
     type: 'postgres'
-    host: 'instancename.accountnumber.us-east-1.rds.amazonaws.com'
+    host: 'localhost'
     port: '5432'
     database: 'gogs'
     user: 'gogs_master'
@@ -46,3 +46,6 @@ gogs:
   security:
     install_lock: True
     secret_key: '7SRbrHN0S2T5AYS'
+  nginx:
+    ssl_cert: '/etc/pki/tls/certs/localhost.crt'
+    ssl_key: '/etc/pki/tls/certs/localhost.key'

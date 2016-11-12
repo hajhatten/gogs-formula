@@ -11,7 +11,7 @@ gogs:
     log_dir: '/var/log/gogs'
   database:
     type: 'postgres'
-    host: 'instancename.accountnumber.us-east-1.rds.amazonaws.com'
+    host: 'localhost'
     port: '5432'
     database: 'gogs'
     user: 'gogs_master'
