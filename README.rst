@@ -36,3 +36,9 @@ Installs nginx as a proxy to gogs.
 ------------------
 
 If you're fine with a self-signed tls certi for nginx, use this state.
+
+
+``gogs.postgresql``
+------------------
+
+Installs a local postgresql instance and sets up the db and user.
